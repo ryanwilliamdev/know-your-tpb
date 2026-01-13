@@ -2,8 +2,8 @@ document.querySelector('#clickMe').addEventListener('click', makeReq)
 
 async function makeReq(){
 
-  const userName = document.querySelector("#userName").value;
-  const res = await fetch(`/api?student=${userName}`)
+  const characterName = document.querySelector("#characterName").value.toLowerCase();
+  const res = await fetch(`/api?character=${characterName}`)
   const data = await res.json()
 
   console.log(data);
