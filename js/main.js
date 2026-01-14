@@ -10,5 +10,5 @@ async function makeReq(){
   document.querySelector("#personName").textContent = data.name
   document.querySelector("#personStatus").textContent = data.status
   document.querySelector("#personOccupation").textContent = data.currentOccupation
-  document.querySelector("#coinFlip").textContent = data.flip
+  document.querySelector("#stealSmokes").textContent = data.stealSmokesOrDaps
 }

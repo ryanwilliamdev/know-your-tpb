@@ -30,29 +30,42 @@ const server = http.createServer((req, res) => {
     });
   }
   else if (page == '/api') {
-    if('character' in params){
-      if(params['character']== 'ricky'){
+    if ('character' in params){
+      if (params['character'] == 'ricky'){
         res.writeHead(200, {'Content-Type': 'application/json'});
-        let flipResult = Math.ceil(Math.random() * 2) === 1 ? 'heads' : 'tails'
+        let stealSmokesOrDapsResult = Math.ceil(Math.random() * 2) === 1 ? 'Steals your smokes!' : 'Daps you up.'
         const objToJson = {
-          name: "ricky",
-          status: "Boss Man",
-          currentOccupation: "Baller",
-          flip: flipResult
+          name: "Ricky",
+          status: "Dumber than a calculator",
+          currentOccupation: "Dope grower",
+          stealSmokesOrDaps: stealSmokesOrDapsResult
         }
         res.end(JSON.stringify(objToJson));
-      }//student = leon
-      else if(params['student'] != 'leon'){
+      } // character = ricky
+      else if (params['character'] == 'julian'){
         res.writeHead(200, {'Content-Type': 'application/json'});
+        let stealSmokesOrDapsResult = Math.ceil(Math.random() * 2) === 1 ? 'Steals your smokes!' : 'Daps you up.'
         const objToJson = {
-          name: "unknown",
-          status: "unknown",
-          currentOccupation: "unknown"
+          name: "Julian",
+          status: "Mrs. Peterson's grandson",
+          currentOccupation: "Bootlegger",
+          stealSmokesOrDaps: stealSmokesOrDapsResult
         }
         res.end(JSON.stringify(objToJson));
-      }//student != leon
-    }//student if
-  }//else if
+      }// character = julian
+      else if (params['character'] == 'bubbles') {
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        let stealSmokesOrDapsResult = Math.ceil(Math.random() * 2) === 1 ? 'Steals your smokes!' : 'Daps you up.'
+        const objToJson = {
+          name: "Bubbles",
+          status: "Rockin' with his kitties",
+          currentOccupation: "Cart Thief",
+          stealSmokesOrDaps: stealSmokesOrDapsResult
+        }
+        res.end(JSON.stringify(objToJson))
+      } // character = bubbles
+    }// character if
+  }// else if
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);
